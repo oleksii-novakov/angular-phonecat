@@ -1,0 +1,156 @@
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th width="20%">Option</th>
+            <th width="40%" ng-repeat="phone in phones">
+                <img ng-src="{{phone.images[0]}}">
+                <h2>{{phone.name}}</h2>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Availability and Networks</th>
+        </tr>
+        <tr>
+            <th>Availability</th>
+            <td ng-repeat="phone in phones"><span ng-repeat="availability in phone.availability">{{availability}}</span></td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Battery</th>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td ng-repeat="phone in phones">{{phone.battery.type}}</td>
+        </tr>
+        <tr>
+            <th>Talk Time</th>
+            <td ng-repeat="phone in phones">{{phone.battery.talkTime}}</td>
+        </tr>
+        <tr>
+            <th>Standby time (max)</th>
+            <td ng-repeat="phone in phones">{{phone.battery.standbyTime}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Storage and Memory</th>
+        </tr>
+        <tr>
+            <th>RAM</th>
+            <td ng-repeat="phone in phones">{{phone.storage.ram}}</td>
+        </tr>
+        <tr>
+            <th>Internal Storage</th>
+            <td ng-repeat="phone in phones">{{phone.storage.flash}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Connectivity</th>
+        </tr>
+        <tr>
+            <th>Network Support</th>
+            <td ng-repeat="phone in phones">{{phone.connectivity.cell}}</td>
+        </tr>
+        <tr>
+            <th>WiFi</th>
+            <td ng-repeat="phone in phones">{{phone.connectivity.wifi}}</td>
+        </tr>
+        <tr>
+            <th>Bluetooth</th>
+            <td ng-repeat="phone in phones">{{phone.connectivity.bluetooth}}</td>
+        </tr>
+        <tr>
+            <th>Infrared</th>
+            <td ng-repeat="phone in phones">{{phone.connectivity.infrared | checkmark}}</td>
+        </tr>
+        <tr>
+            <th>GPS</th>
+            <td ng-repeat="phone in phones">{{phone.connectivity.gps | checkmark}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Android</th>
+        </tr>
+        <tr>
+            <th>OS Version</th>
+            <td ng-repeat="phone in phones">{{phone.android.os}}</td>
+        </tr>
+        <tr>
+            <th>OS UI</th>
+            <td ng-repeat="phone in phones">{{phone.android.ui}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Size and Weight</th>
+        </tr>
+        <tr>
+            <th>Dimensions</th>
+            <td ng-repeat="phone in phones"><span ng-repeat="dim in phone.sizeAndWeight.dimensions">{{dim}}</span></td>
+        </tr>
+        <tr>
+            <th>Weight</th>
+            <td ng-repeat="phone in phones">{{phone.sizeAndWeight.weight}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Display</th>
+        </tr>
+        <tr>
+            <th>Screen size</th>
+            <td ng-repeat="phone in phones">{{phone.display.screenSize}}</td>
+        </tr>
+        <tr>
+            <th>Screen resolution</th>
+            <td ng-repeat="phone in phones">{{phone.display.screenResolution}}</td>
+        </tr>
+        <tr>
+            <th>Touch screen</th>
+            <td ng-repeat="phone in phones">{{phone.display.touchScreen | checkmark}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Hardware</th>
+        </tr>
+        <tr>
+            <th>CPU</th>
+            <td ng-repeat="phone in phones">{{phone.hardware.cpu}}</td>
+        </tr>
+        <tr>
+            <th>USB</th>
+            <td ng-repeat="phone in phones">{{phone.hardware.usb}}</td>
+        </tr>
+        <tr>
+            <th>Audio / headphone jack</th>
+            <td ng-repeat="phone in phones">{{phone.hardware.audioJack}}</td>
+        </tr>
+        <tr>
+            <th>FM Radio</th>
+            <td ng-repeat="phone in phones">{{phone.hardware.fmRadio | checkmark}}</td>
+        </tr>
+        <tr>
+            <th>Accelerometer</th>
+            <td ng-repeat="phone in phones">{{phone.hardware.accelerometer | checkmark}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="2" class="text-center">Camera</th>
+        </tr>
+        <tr>
+            <th>Primary</th>
+            <td ng-repeat="phone in phones">{{phone.camera.primary}}</td>
+        </tr>
+        <tr>
+            <th>Features</th>
+            <td ng-repeat="phone in phones">{{phone.camera.features.join(', ')}}</td>
+        </tr>
+        <tr>
+            <th>Additional Features</th>
+            <td ng-repeat="phone in phones">{{phone.additionalFeatures}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#/phones/" class="btn btn-default">Back to list</a><br><br>

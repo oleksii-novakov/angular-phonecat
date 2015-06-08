@@ -12,6 +12,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
   function($scope, $routeParams, Phone) {
+    $scope.phones = Phone.query();
+
     $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
       $scope.mainImageUrl = phone.images[0];
     });
@@ -19,4 +21,9 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
     }
+  }]);
+
+phonecatControllers.controller('PhoneComparingCtrl', ['$scope', '$routeParams', 'Phone',
+  function($scope, $routeParams, Phone) {
+    $scope.phones = [Phone.get({phoneId: $routeParams.phoneId1}), Phone.get({phoneId: $routeParams.phoneId2})];
   }]);

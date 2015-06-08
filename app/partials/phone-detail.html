@@ -7,6 +7,14 @@
 
 <h1>{{phone.name}}</h1>
 
+<label>Compare with:
+    <select class="form-control" ng-model="comparingDevice">
+        <option ng-repeat="phone in phones" value="{{phone.id}}">{{phone
+            .name}}</option>
+    </select>
+</label>
+<a href="#/compare/{{phone.id}}/{{comparingDevice}}" class="btn btn-default">Compare</a>
+
 <p>{{phone.description}}</p>
 
 <ul class="phone-thumbs">

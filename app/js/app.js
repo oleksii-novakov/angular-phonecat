@@ -22,6 +22,10 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/phone-detail.html',
         controller: 'PhoneDetailCtrl'
       }).
+      when('/compare/:phoneId1/:phoneId2', {
+        templateUrl: 'partials/phone-comparing.html',
+        controller: 'PhoneComparingCtrl'
+      }).
       otherwise({
         redirectTo: '/phones'
       });
